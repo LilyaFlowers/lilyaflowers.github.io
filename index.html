@@ -60,7 +60,7 @@ nav.main a:hover{color:var(--on-wine)}
 .lang button{background:none;border:0;color:var(--on-wine-2);font-size:13px;font-weight:500;padding:5px 10px;border-radius:999px;line-height:1.2}
 .lang button[aria-pressed="true"]{background:var(--on-wine);color:var(--wine)}
 .cart-btn .n{background:var(--ink);color:var(--bg);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px;font-variant-numeric:tabular-nums}
-@media (max-width:760px){nav.main{display:none}.wa-top{margin-left:auto}}
+@media (max-width:1060px){nav.main{display:none}.wa-top{margin-left:auto}}
 @media (max-width:440px){.wa-top{padding:0;width:36px;height:36px;justify-content:center}.wa-top span{display:none}}
 @media (max-width:520px){.cart-btn{display:none}}
 @media (max-width:330px){.logo span{display:none!important}}
@@ -310,6 +310,17 @@ header.scrolled .logo-img{width:36px;height:36px}
 @media (prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
 .done{position:relative}
 .petal{position:absolute;width:12px;height:18px;border-radius:12px 0 12px 0;pointer-events:none}
+
+/* ===== без «нейросетевых» приёмов ===== */
+.kicker{font-family:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;font-style:italic;font-weight:500;font-size:24px;letter-spacing:0;text-transform:none;color:var(--stem);margin-bottom:6px}
+.tag small{font-family:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;font-style:italic;font-weight:500;font-size:19px;letter-spacing:0;text-transform:none;color:var(--stem)}
+.facts-line{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--line);color:var(--ink-2);font-size:15px}
+@media (prefers-reduced-motion:no-preference){.facts-line{animation:lxUp .9s cubic-bezier(.2,.7,.2,1) .3s both}}
+@media (max-width:640px){.kicker{font-size:21px}.facts-line{margin-top:24px;font-size:14px}}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.hero h1{font-size:clamp(42px,5vw,70px);overflow-wrap:normal;hyphens:manual}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+@media (max-width:640px){.hero h1{font-size:clamp(32px,10.5vw,50px)}}
 </style>
 </head>
 <body>
@@ -328,16 +339,12 @@ header.scrolled .logo-img{width:36px;height:36px}
 <main id="top">
   <div class="wrap hero">
     <div>
-      <h1 data-i18n="h1">Цветы, которые <em>дарят</em> утром и&nbsp;вечером</h1>
+      <h1 data-i18n="h1">Авторские букеты <em>в Талдыкоргане</em></h1>
       <div class="cta">
         <a class="btn solid" href="#catalog"><span data-i18n="pick">Выбрать букет</span>
           <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="facts">
-        <div><b data-i18n="f1b">Талдыкорган</b><span data-i18n="f1">авторские букеты</span></div>
-        <div><b data-i18n="f2b">Яндекс Доставка</b><span data-i18n="f2">по всему городу</span></div>
-        <div><b data-i18n="f3b">Заказ на сайте</b><span data-i18n="f3">за пару минут</span></div>
-      </div>
+      <p class="facts-line" data-i18n="hl">Доставка Яндексом по Талдыкоргану · с 10:00 до 00:30</p>
     </div>
     <div class="hero-img">
       <div class="arch"><canvas data-seed="7" data-n="7" data-colors="#7A1C32,#FFFFFF,#A8374F,#F1D6DC" data-big="1"></canvas></div>
@@ -345,10 +352,6 @@ header.scrolled .logo-img{width:36px;height:36px}
     </div>
   </div>
 
-  <div class="band"><div class="strip" aria-hidden="true"><div class="track">
-    <span data-i18n="s1">Авторские букеты</span><span data-i18n="s2">Розы поштучно</span><span data-i18n="s3">Композиции в коробке</span><span data-i18n="s4">Комнатные растения</span><span data-i18n="s5">Открытка в подарок</span>
-    <span data-i18n="s1">Авторские букеты</span><span data-i18n="s2">Розы поштучно</span><span data-i18n="s3">Композиции в коробке</span><span data-i18n="s4">Комнатные растения</span><span data-i18n="s5">Открытка в подарок</span>
-  </div></div></div>
 
   <section id="catalog">
     <div class="wrap">
@@ -463,7 +466,7 @@ const ITEMS=[
 
 /* ===== языки: рус / қаз ===== */
 const WA_TEXT={ru:"Здравствуйте! Хочу заказать букет",kk:"Сәлеметсіз бе! Букетке тапсырыс бергім келеді"};
-const KK={"wa": "Жазу", "nav1": "Букеттер", "nav2": "Қалай тапсырыс беру", "nav3": "Байланыс", "pick": "Букет таңдау", "h1": "Таңертең де, кешке де <em>сыйланатын</em> гүлдер", "f1b": "Талдықорған", "f1": "авторлық букеттер", "f2b": "Яндекс Жеткізу", "f2": "бүкіл қала бойынша", "f3b": "Сайтта тапсырыс", "f3": "бірнеше минутта", "tag1": "Күн букеті", "tag2": "Ақ лалагүлдер мен эвкалипт", "s1": "Авторлық букеттер", "s2": "Раушандар даналап", "s3": "Қораптағы композициялар", "s4": "Бөлме өсімдіктері", "s5": "Сыйлыққа ашықхат", "k1": "Каталог", "h2a": "Бүгін витринада", "h2b": "Букетке дейін үш қадам", "st1": "Таңдаңыз", "st2": "Рәсімдеңіз", "st3": "Алыңыз", "sp1": "Ұнаған букеттің астындағы «Сатып алу» батырмасын басыңыз. Қажеттісі болмаса, Instagram-ға жазыңыз, сізге арнап жинап береміз.", "sp2": "Атыңызды, телефоныңызды және уақытты көрсетіңіз. Жазудың да, қоңырау шалудың да қажеті жоқ: тапсырыс бірден флористке түседі.", "sp3": "Өзіңіз алып кетесіз немесе Яндекс курьерін шақырамыз. Жібермес бұрын букеттің суретін жібереміз.", "c1h": "Жеткізу", "c2h": "Жұмыс уақыты", "c1": "Талдықорған бойынша Яндекс Жеткізу курьерімен. Бағасы Яндекс тарифі бойынша, растау кезінде айтамыз.", "c2": "10:00-ден 00:30-ға дейін<br>Сайттағы тапсырыстарды тәулік бойы қабылдаймыз", "c3": "Букеттер туралы сұрақтарға жауап береміз", "c4": "Күн сайын жаңа букеттер", "ft1": "Lilya flowers&amp;cafe, Талдықорған", "ft2": "Демо-дизайн: бағалар, суреттер мен байланыстар шамамен берілген", "close": "Жабу", "less": "Азайту", "more": "Көбейту", "l1": "Атыңыз", "l5": "Күні", "l6": "Уақыты", "l7": "Букет кімге (сізге болмаса)", "l8": "Алушының телефоны", "l9": "Ашықхат мәтіні", "l4": "Жеткізу мекенжайы", "l3": "Алу тәсілі", "l2": "Телефон", "pk": "Өзі алып кету", "ph1": "Көше, үй, пәтер", "ph2": "Алушының аты", "hint": "Яндекс Жеткізу жеткізеді. Бағасы Яндекс тарифі бойынша, растау кезінде айтамыз.", "sum": "Сомасы", "send": "Тапсырысты жіберу", "pay": "Төлем растаудан кейін: флорист сізбен хабарласады.", "done": "Флорист тапсырысты алды. Құрамын, уақытын және төлемді растау үшін жақын арада сізбен хабарласады.", "back": "Сайтқа оралу"};
+const KK={"wa": "Жазу", "nav1": "Букеттер", "nav2": "Қалай тапсырыс беру", "nav3": "Байланыс", "pick": "Букет таңдау", "h1": "Талдықорғандағы <em>авторлық букеттер</em>", "f1b": "Талдықорған", "f1": "авторлық букеттер", "f2b": "Яндекс Жеткізу", "f2": "бүкіл қала бойынша", "f3b": "Сайтта тапсырыс", "f3": "бірнеше минутта", "tag1": "Күн букеті", "tag2": "Ақ лалагүлдер мен эвкалипт", "s1": "Авторлық букеттер", "s2": "Раушандар даналап", "s3": "Қораптағы композициялар", "s4": "Бөлме өсімдіктері", "s5": "Сыйлыққа ашықхат", "k1": "Каталог", "h2a": "Бүгін витринада", "h2b": "Букетке дейін үш қадам", "st1": "Таңдаңыз", "st2": "Рәсімдеңіз", "st3": "Алыңыз", "sp1": "Ұнаған букеттің астындағы «Сатып алу» батырмасын басыңыз. Қажеттісі болмаса, Instagram-ға жазыңыз, сізге арнап жинап береміз.", "sp2": "Атыңызды, телефоныңызды және уақытты көрсетіңіз. Жазудың да, қоңырау шалудың да қажеті жоқ: тапсырыс бірден флористке түседі.", "sp3": "Өзіңіз алып кетесіз немесе Яндекс курьерін шақырамыз. Жібермес бұрын букеттің суретін жібереміз.", "c1h": "Жеткізу", "c2h": "Жұмыс уақыты", "c1": "Талдықорған бойынша Яндекс Жеткізу курьерімен. Бағасы Яндекс тарифі бойынша, растау кезінде айтамыз.", "c2": "10:00-ден 00:30-ға дейін<br>Сайттағы тапсырыстарды тәулік бойы қабылдаймыз", "c3": "Букеттер туралы сұрақтарға жауап береміз", "c4": "Күн сайын жаңа букеттер", "ft1": "Lilya flowers&amp;cafe, Талдықорған", "ft2": "Демо-дизайн: бағалар, суреттер мен байланыстар шамамен берілген", "close": "Жабу", "less": "Азайту", "more": "Көбейту", "l1": "Атыңыз", "l5": "Күні", "l6": "Уақыты", "l7": "Букет кімге (сізге болмаса)", "l8": "Алушының телефоны", "l9": "Ашықхат мәтіні", "l4": "Жеткізу мекенжайы", "l3": "Алу тәсілі", "l2": "Телефон", "pk": "Өзі алып кету", "ph1": "Көше, үй, пәтер", "ph2": "Алушының аты", "hint": "Яндекс Жеткізу жеткізеді. Бағасы Яндекс тарифі бойынша, растау кезінде айтамыз.", "sum": "Сомасы", "send": "Тапсырысты жіберу", "pay": "Төлем растаудан кейін: флорист сізбен хабарласады.", "done": "Флорист тапсырысты алды. Құрамын, уақытын және төлемді растау үшін жақын арада сізбен хабарласады.", "back": "Сайтқа оралу", "hl": "Талдықорған бойынша Яндекспен жеткізу · 10:00-ден 00:30-ға дейін"};
 const TXT={
   ru:{all:"Все",buy:"Купить",perPc:" за шт.",formTitle:"Оформление",today:"Сегодня",tomorrow:"Завтра",asap:"Как можно скорее",any:"Любое время",
       eName:"Укажите ваше имя",ePhone:"Проверьте номер телефона",eAddr:"Укажите адрес доставки",eConf:"Приём заказов ещё не подключён. Напишите нам в Instagram.",
